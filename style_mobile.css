@@ -1,0 +1,191 @@
+* {
+    font-family: "Verdana",Helvetica,sans-serif;
+	cursor: default;
+}
+
+body {
+	background-attachment: fixed;
+	background-repeat: repeat;
+	background-position: top center;
+	height: 100%;
+	margin: 0;
+}
+
+img.avatar {
+	width: 128px;
+	height: 128px;
+	border-radius: 5px;
+	margin: 0 auto;
+	margin-top: 30px;
+	display: block;
+}
+
+#mutual {
+	width: 60%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	line-height: 45px;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	text-shadow: 0px 0px 5px white;
+	color: white;
+	background-color: rgba(51, 133, 255, 0.7);
+	border-radius: 8px;
+}
+#inside {
+	
+}
+h2.title {
+	margin-top: 20px;
+	font-size: 0.98em;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	text-shadow: 0px 0px 5px white;
+	color: white;
+}
+
+div.ct {
+	margin-top: 20px;
+	margin:0 auto;
+	text-align: center;
+}
+
+div.howto {
+	margin-top: 50px;
+	width: 90%;
+	background-color: rgba(46, 48, 146, 0.5);
+	border-radius: 8px;
+}
+
+table {
+	border: 1px;
+}
+
+div.setp {
+	width: 50px;
+	height: 30px;
+	background-color: orange;
+	line-height: 30px;
+	color: white;
+	text-align: center;
+	border-radius: 8px;
+	font-size: 0.98em;
+}
+
+div.detail {
+	width: 180px;
+	line-height: 30px;
+	color: white;
+	text-align: center;
+	border-radius: 8px;
+	font-size: 0.98em;
+}
+
+div.detail:hover {
+	text-shadow: 0px 0px 5px white;
+}
+
+input.user {
+	background-color: rgba(46, 48, 146, 0.5);
+	border-radius: 8px;
+	border-style: none;
+	line-height: 36px;
+	color: white;
+	text-align: center;
+	height: 36px;
+}
+
+input.button {
+	background-color: rgba(46, 48, 146, 0.8);
+	border-radius: 8px;
+	border-style: none;
+	line-height: 36px;
+	height: 36px;
+	color: white;
+	text-align: center;
+	text-shadow: 0px 0px 5px white;
+}
+
+.footer{
+	font-size: 12px;
+	height: auto; 
+	width: auto;
+	margin-top: 5px;
+	bottom:0px;
+	clear:both;
+	text-align: center;
+	color: #999;
+}
+	
+a:link, a:visited, a:active {
+	color: #FFF;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+a.footer:hover {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+a.footer:link, a.footer:visited, a.footer:active {
+	color: #999;
+	cursor: pointer;
+}
+
+a.footer:hover {
+	color: #000;
+	cursor: pointer;
+}
+
+#header {
+	width: 100%;
+	height: 50px;
+	margin: 0;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+#mv1 {
+	width: 100%;
+	height: 1500px;
+	-webkit-animation: scroll 25s infinite linear;
+	position:relative;
+	float: left;
+	background-repeat: repeat;
+}
+#mv2 {
+	width: 100%;
+	height: 1500px;
+	-webkit-animation: scroll 20s infinite linear;
+	position:relative;
+	float: left;
+	background-repeat: repeat;
+}
+#mv3 {
+	width: 100%;
+	height: 1500px;
+	-webkit-animation: scroll 15s infinite linear;
+	position:relative;
+	float: left;
+	background-repeat: repeat;
+}
+@-webkit-keyframes scroll
+{
+	from {bottom:0px;}
+	to {bottom:360px;}
+}
+#overlay {
+	width: 100%;
+	height: 50px;
+	position: absolute;
+	background: rgba(51, 133, 220, .9);
+	z-index: 3;
+}
+
+div.title {
+	line-height: 50px;
+	color: white;
+	text-shadow: 0px 0px 5px white;
+}
