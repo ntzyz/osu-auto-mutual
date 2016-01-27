@@ -54,7 +54,8 @@
         <div class="ct">
             <form id="in">
                 <input type="text" class="user" name="user" id="user" placeholder="Your osu! ID" style="cursor: text;"/>
-                <input type="submit" class="button" style="display: inline;" value="Mutual!" onclick="mutual(); return false;" onsubmit="return false;" />
+                <div class="button" style="display: inline-block; font-size: 0.9em;" onclick="mutual();">Mutual!</div>
+                <!-- input type="submit" class="button" style="display: inline;" value="Mutual!" onclick="mutual(); return false;" onsubmit="return false;" / -->
             </form>
         </div>
         <div class="howto">

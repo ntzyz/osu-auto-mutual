@@ -34,7 +34,9 @@ img.avatar {
 	border-radius: 8px;
 }
 #inside {
-	
+	padding-left: 20px;
+	padding-right: 20px;
+    line-height: 2.5em;
 }
 h2.title {
 	margin-top: 20px;
@@ -95,17 +97,20 @@ input.user {
 	color: white;
 	text-align: center;
 	height: 36px;
+    display: inline-block;
 }
 
-input.button {
+.button {
 	background-color: rgba(46, 48, 146, 0.8);
 	border-radius: 8px;
 	border-style: none;
-	line-height: 36px;
-	height: 36px;
+	line-height: 38px;
+	height: 38px;
+    width: 70px;
 	color: white;
 	text-align: center;
 	text-shadow: 0px 0px 5px white;
+    cursor: pointer;
 }
 
 .footer{
