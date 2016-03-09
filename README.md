@@ -1,20 +1,22 @@
 osu! Auto Mutual
 ================
 
-#### Introduction
-Another version of [mutual.ml](https://github.com/iebb/mutual.ml)
+## Introduction
+Another version of [mutual.ml](https://github.com/iebb/mutual.ml), use node.js instead of PHP :)
 
 Sample page is [here](https://blog.dimension.moe/osu/)
 
-Change `config.php` to work :)
+## How to use
+1. Install [Node.js](https://nodejs.org/en/)
+2. Make a few changes in `server.js` and `www/index.html`.
+3. Run `server.js`
 
-Remember to set write permission on `/cookies/ckz.txt` and `/logs/log.txt`, or it won't work properly!
-
-#### Advantages
-1. More aniemation.
+## Advantages
+1. More animation.
 2. Mobile friendly.
+3. Faster response.
 
-#### Note
+## Note
 USING IT IS **NOT** ENCOURAGED, AND DON'T USE IT AS A **PUBLIC** SERVICE
 
 > pe[at]ppy.sh
@@ -27,9 +29,9 @@ USING IT IS **NOT** ENCOURAGED, AND DON'T USE IT AS A **PUBLIC** SERVICE
 > 
 > This kind of service is not acceptable and puts users at danger.
 
-#### Licenses
+## Licenses
 Apache License Version 2.0
 
-#### Acknowledgement
+## Acknowledgement
 Great thanks to [mutual.ml](https://github.com/iebb/mutual.ml).
 
