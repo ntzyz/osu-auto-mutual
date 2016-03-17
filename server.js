@@ -23,7 +23,7 @@ http.createServer((request, response) => {
     fs.exists(filename, (exists) => {
         if(!exists) {
             response.writeHead(404, {"Content-Type": "text/html"});
-            response.write("<br /><center><b>这台服务器没有找到这个文件，非常害怕</b><hr />404 Not found.</center>");
+            response.write("<meta charset='UTF-8'/><br /><center><b>这台服务器没有找到这个文件，非常害怕</b><hr />404 Not found.</center>");
             response.end();
             return;
         }
@@ -42,6 +42,9 @@ http.createServer((request, response) => {
             }
             else {
                 response.writeHead(200);
+            }
+            if (filename.indexOf('htm')) {
+                response.writeHead(404, {"Content-Type": "text/html"});
             }
             response.write(file);
             response.end();
