@@ -2,7 +2,7 @@
     var request = require('request');
     request = request.defaults({jar: true})
     var cookie;
-    
+
     process.on('uncaughtException', (err) => {
         console.log(err);
     });
@@ -24,9 +24,9 @@
             cookie = response.headers['set-cookie'];
         });
     }
-    
+
     module.exports.mutual = function try_mutual(uid, resp) {
-        request.post({
+        request.get({
             url:    'http://osu.ppy.sh/u/' + uid,
             headers: {
                 'user-agent':   'Mozilla/99.99 (compatible; MSIE 99.99; Windows XP 99.99)',
@@ -39,7 +39,7 @@
             }
             else {
                 var luc = body.match(/var localUserCheck = \"(.*?)\"/)[1];
-                request.post({
+                request.get({
                     url:    'http://osu.ppy.sh/u/' + uid,
                     headers: {
                         'user-agent':   'Mozilla/99.99 (compatible; MSIE 99.99; Windows XP 99.99)',

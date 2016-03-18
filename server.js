@@ -16,7 +16,7 @@ http.createServer((request, response) => {
         mutual.mutual(request.url.substr(9), response);
         return;
     }
-    
+
     var uri = url.parse(request.url).pathname;
     var filename = path.join(process.cwd() + '/www', uri);
 
@@ -31,7 +31,7 @@ http.createServer((request, response) => {
         if (fs.statSync(filename).isDirectory()) filename += 'index.html';
 
         fs.readFile(filename, (err, file) => {
-            if(err) {                
+            if(err) {
                 response.writeHead(500, {"Content-Type": "text/plain"});
                 response.write(err + "\n");
                 response.end();
@@ -40,11 +40,11 @@ http.createServer((request, response) => {
             if (filename.indexOf('png') > 0) {
                 response.writeHead(200, {"Content-Type": "image/png"});
             }
+            else if (filename.indexOf('htm') > 0) {
+                response.writeHead(200, {"Content-Type": "text/html"});
+            }
             else {
                 response.writeHead(200);
-            }
-            if (filename.indexOf('htm')) {
-                response.writeHead(404, {"Content-Type": "text/html"});
             }
             response.write(file);
             response.end();
