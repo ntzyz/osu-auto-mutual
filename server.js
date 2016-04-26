@@ -5,8 +5,14 @@ var path = require('path');
 var mutual = require('./mutual');
 var port = 2333;
 
-// replace with your own user name and password.
-mutual.login('nobody', 'no password');
+// replace with your own account information.
+var config = {
+    username: 'nobody',
+    password: 'no password',
+    uid: 4778858
+};
+
+mutual.login(config.username, config.password);
 
 http.createServer((request, response) => {
     if (request.url.indexOf('/request/') == 0) {
@@ -14,6 +20,13 @@ http.createServer((request, response) => {
         console.log('[' + date.toDateString() + '] Trying to add: ' + request.url.substr(9));
         response.writeHead(200);
         mutual.mutual(request.url.substr(9), response);
+        return;
+    }
+    else if (request.url == '/config.js') {
+        response.writeHead(200, {"Content-Type": "application/javascript"});
+        var script = "$('.avatar')[0].src = '//a.ppy.sh/" + config.uid + "';\n" +
+                     "$('a')[0].href = '//osu.ppy.sh/u/" + config.uid + "';";
+        response.end(script);
         return;
     }
 

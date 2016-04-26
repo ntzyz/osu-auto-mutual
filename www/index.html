@@ -7,25 +7,6 @@
         <link rel="stylesheet" type="text/css" href="style.css" media="screen and (min-width: 550px)" />
         <link rel="stylesheet" type="text/css" href="style_mobile.css" media="screen and (max-width: 550px)" />
         <link rel="shortcut icon" href="//s.ppy.sh/favicon.ico" type="image/vnd.microsoft.icon" />
-        <script src="jquery-1.11.0.min.js"> </script>
-        <script type="text/javascript">
-            function mutual() {
-                   $('#mutual').fadeOut(250, function() {
-                       $('#inside').html('Please Wait...');
-                   });
-                  $('#mutual').fadeIn(250);
-                $.ajax({
-                    type: 'GET',
-                    url: 'request/' + $('#user').val(),
-                    success: function(response) {
-                        $('#mutual').fadeOut(500, function() {
-                            $('#inside').html(response);
-                        });
-                        $('#mutual').fadeIn(500);
-                    }
-                });
-            }
-        </script>
         <style>
             body {
                 background-image: url('bg.png');
@@ -78,5 +59,25 @@
             <br />
             Node.js version by <a class="footer" href="https://www.ntzyz.cn/">ntzyz</a>
         </div>
+        <script src="jquery-1.11.0.min.js"> </script>
+        <script type="text/javascript">
+            function mutual() {
+                   $('#mutual').fadeOut(250, function() {
+                       $('#inside').html('Please Wait...');
+                   });
+                  $('#mutual').fadeIn(250);
+                $.ajax({
+                    type: 'GET',
+                    url: 'request/' + $('#user').val(),
+                    success: function(response) {
+                        $('#mutual').fadeOut(500, function() {
+                            $('#inside').html(response);
+                        });
+                        $('#mutual').fadeIn(500);
+                    }
+                });
+            }
+        </script>
+        <script src="config.js"> </script>
     </body>
 </html>
