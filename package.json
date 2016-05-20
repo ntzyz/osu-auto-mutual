@@ -1,0 +1,30 @@
+{
+  "name": "osu-auto-mutual",
+  "version": "1.0.0",
+  "description": "Another version of mutual.ml",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ntzyz/osu-auto-mutual.git"
+  },
+  "keywords": [
+    "osu",
+    "mutual"
+  ],
+  "author": "ntzyz",
+  "license": "Apache",
+  "bugs": {
+    "url": "https://github.com/ntzyz/osu-auto-mutual/issues"
+  },
+  "homepage": "https://github.com/ntzyz/osu-auto-mutual#readme",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "pug": "^2.0.0-alpha7",
+    "request": "^2.72.0"
+  }
+}

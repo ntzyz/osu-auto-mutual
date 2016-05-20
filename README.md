@@ -8,9 +8,9 @@ Sample page is [here](https://blog.dimension.moe/osu/)
 
 ## How to use
 1. Install [Node.js](https://nodejs.org/en/)
-2. Run `npm install request`
-3. Make a few changes in `server.js` and `www/index.html`
-4. Run `server.js`
+2. Run `npm install`
+3. Make a few changes in `config.js`
+4. Run `node index.js`
 
 ## Advantages
 1. More animation.
