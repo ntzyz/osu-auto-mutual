@@ -4,7 +4,7 @@ osu! Auto Mutual
 ## Introduction
 Another version of [mutual.ml](https://github.com/iebb/mutual.ml), use node.js instead of PHP :)
 
-Sample page is [here](https://blog.dimension.moe/osu/)
+Sample page is currently unavailable as the IP address of my VPS is blocked by CloudFlare :(
 
 ## How to use
 1. Install [Node.js](https://nodejs.org/en/)
