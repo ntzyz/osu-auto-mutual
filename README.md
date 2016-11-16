@@ -12,11 +12,6 @@ Sample page is [here](https://blog.dimension.moe/osu/).
 3. Make a few changes in `config.js`
 4. Run `node index.js`
 
-## Advantages
-1. More animation.
-2. Mobile friendly.
-3. Faster response.
-
 ## Note
 USING IT IS **NOT** ENCOURAGED, AND DON'T USE IT AS A **PUBLIC** SERVICE
 
