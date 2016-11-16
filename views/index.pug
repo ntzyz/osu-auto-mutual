@@ -4,62 +4,187 @@ html
         title osu! Auto Mutual
         meta(name="viewport", content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no")
         meta(http-equiv="Content-Type", content="text/html;charset=utf-8")
-        link(rel="stylesheet", type="text/css", href="static/style.css" media="screen and (min-width: 550px)")
-        link(rel="stylesheet", type="text/css", href="static/style_mobile.css" media="screen and (max-width: 550px)")
         link(rel="shortcut icon", href="//s.ppy.sh/favicon.ico", type="image/vnd.microsoft.icon")
         style.
-            body { background-image: url('static/bg.png');}
+            .white {
+                color: white;
+                text-shadow: 0px 0px 2px white;
+            }
+            html, body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                font-family: Verdana, Helvetica, sans-serif;
+                box-sizing: border-box;
+            }
+            body {
+                background-image: url('static/bg.png');
+                text-align: center
+            }
+            div.header {
+                position: relative;
+                width: 100%;
+                height: 60px;
+            }
+            div.header > * {
+                height: 60px;
+                margin: 0;
+            }
+            div.header > canvas {
+                z-index: -2;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
+            div.header > div.overlay {
+                z-index: -1;
+                background-color: rgba(51, 133, 220, .9);
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+            div.header > h1 {
+                position: absolute;
+                font-size: 20px;
+                font-weight: normal;
+                line-height: 60px;
+                padding-left: 20px;
+                z-index: 0;
+                color: white;
+                text-shadow: 0px 0px 5px white;
+                overflow: hidden;
+            }
+            div.avatar > * {
+                margin: 0 auto;
+                padding: 40px 0 20px 0;
+                display: block;
+            }
+            div.mutual {
+                margin: 0 10px 10px 10px;
+                max-width: 300px;
+                display: inline-block;
+                line-height: 24px;
+                background-color: rgba(51, 133, 255, 0.7);
+                border-radius: 8px;
+                padding: 10px 24px 10px 24px;
+            }
+            div.form {
+                margin: 0 auto;
+            }
+            div.form input {
+                position: relative;
+                display: inline-block;
+                margin-top: 0;
+                max-width: 200px;
+                width: 100%;
+                border: none;
+                background-color: rgba(46, 48, 146, 0.5);
+                border-radius: 8px;
+                line-height: 36px;
+                text-align: center;
+                font-size: 0.85em;
+                padding: 0;
+                margin: 0;
+                top: -1px;
+                color: white;
+            }
+            div.form input:focus {
+                outline: none;
+            }
+            div.mutual, div.mutual *, div.form * {
+                transition: all ease 0.2s;
+            }
+            .hide {
+                opacity: 0;
+            }
+            div.form > div.button {
+                cursor: pointer;
+                display: inline-block;
+                background-color: rgba(46, 48, 146, 0.8);
+                border: none;
+                border-radius: 8px;
+                line-height: 36px;
+                width: 70px;
+                margin-left: 5px;
+                font-size: 0.85em;
+                user-select: none;
+            }
+            div.form > div.button:hover {
+                background-color: rgba(46, 48, 146, 0.5);
+                text-shadow: 0px 0px 8px white;
+            }
+            div.container {
+                padding: 0 10px 0 10px;
+            }
+            div.howto {
+                margin: 20px auto;
+                max-width: 500px;
+                width: auto;
+                background-color: rgba(46, 48, 146, 0.5);
+                border-radius: 8px;
+                line-height: 32px;
+                padding: 10px 0 0 0;
+            }
+            span.leftcell {
+                display: inline-block;
+                width: 30px;
+                text-align: center;
+                background: orange;
+                margin-right: 10px;
+            }
+            span.rightcell {
+                display: inline-block;
+                width: 180px;
+                text-align: center;
+            }
+            div.howto ul {
+                list-style: none;
+                padding: 0;
+                text-indent: 0;
+            }
+            div.howto li {
+                margin: 10px;
+            }
+            div.howto span {
+                border-radius: 8px;
+                font-weight: 400;
+            }
+            div.footer {
+                font-size: 0.8em;
+                color: #777;
+            }
+            a:link, a:hover, a:active, a:visited {
+                color: inherit;
+                text-decoration: none;
+            }
     body
-        div#header
-            div#overlay.title
-                div.title(style="padding-left: 10px;") osu! Auto Mutual
-            div#mv1(style="background-image: url(static/triangles-1.png);")
-                div#mv2(style="background-image: url(static/triangles-2.png);")
-                    div#mv3(style="background-image: url(static/triangles-3.png);")
-        - var imgurl = 'http://a.ppy.sh/' + userid
-        img.avatar(src=imgurl)
-        center
-            div#mutual
-                div#inside Let's become mutual friend!
-            div.ct
-                input.user#user(type="text", placeholder="Your osu! ID", name="user", style="cursor: text;")
-                div.button(style="display: inline-block; font-size: 0.9em; margin-left: 10px", onclick="mutual();") Mutual
-            div.howto
-                h2.title(style="padding-top: 1em;") How to become my mutual friend
-                center
-                    table(cellspacing="5%", cellpadding="5%")
-                        tr
-                            th: div.setp 1
-                            th: div.detail(style="background-color: #6cf;"): a(href="//osu.ppy.sh/u/ntzyz", target="_blank") Add me as friend.
-                        tr
-                            th: div.setp 2
-                            th: div.detail(style="background-color: #4e4;") Type your name.
-                        tr
-                            th: div.setp 3
-                            th: div.detail(style="background-color: #f99;") Click 'Mutual'!
-        div.footer(style="padding-bottom: 20px;") osu! Auto Mutual by 
-            a.footer(href="http://wa.vg") jebwizoscar
+        div.header
+            canvas#triangles
+            div.overlay
+            h1.white osu! Auto Mutual
+        div.avatar
+            img(src='http://a.ppy.sh/' + userid)
+        div.mutual: span.white#message Let's become mutual friend.
+        div.form
+            div(style="position: relative; display: inline-block"): input#uid(type="text", placeholder="Your osu! id")
+            div.button.white#mutual Mutual!
+        div.container: div.howto.white How to become my mutual friend.
             br
-            | Edit by 
-            a.footer(href="http://hazelzhu.com") Hazel_Zhu
+            ul(style="text-align: left; display: inline-block;")
+                li 
+                    span.leftcell 1
+                    span.rightcell(style="background: #6cf;"): a(href="//osu.ppy.sh/u/" + userid, target="_blank") Add me as friend.
+                li 
+                    span.leftcell 2
+                    span.rightcell(style="background: #4e4;") Type your name.
+                li 
+                    span.leftcell 3
+                    span.rightcell(style="background: #f99;") Click Mutual!
+        div.footer osu! Auto Mutual by
+            a(href="http://wa.vg" + userid, target="_blank") jebwizoscar.
             br
             | Node.js version by 
-            a.footer(href="https://www.ntzyz.cn/") ntzyz
-        script(src="static/jquery-1.11.0.min.js")
-        script(type="text/javascript").
-            function mutual() {
-                   $('#mutual').fadeOut(250, function() {
-                       $('#inside').html('Please Wait...');
-                   });
-                  $('#mutual').fadeIn(250);
-                $.ajax({
-                    type: 'GET',
-                    url: 'request?id=' + $('#user').val(),
-                    success: function(response) {
-                        $('#mutual').fadeOut(500, function() {
-                            $('#inside').html(response);
-                        });
-                        $('#mutual').fadeIn(500);
-                    }
-                });
-            }
+            a(href="https://www.ntzyz.cn/" + userid, target="_blank") ntzyz.
+        script(src="/static/bundle.js")

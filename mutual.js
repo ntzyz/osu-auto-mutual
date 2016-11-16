@@ -1,6 +1,5 @@
 var request = require('request');
 request = request.defaults({jar: true})
-var cookie;
 
 process.on('uncaughtException', (err) => {
     console.log(err);
@@ -20,7 +19,6 @@ module.exports.login = function login(uname, passwd) {
         }
     }, (error, response, body) => {
         console.log('Login success');
-        cookie = response.headers['set-cookie'];
     });
 }
 
@@ -29,7 +27,6 @@ module.exports.mutual = function try_mutual(uid, resp) {
         url:    'http://osu.ppy.sh/u/' + uid,
         headers: {
             'user-agent':   'Mozilla/99.99 (compatible; MSIE 99.99; Windows XP 99.99)',
-            'cookie':       cookie
         }
     }, (error, response, body) => {
         if (body.indexOf('Mutual') > 0) {
@@ -41,7 +38,6 @@ module.exports.mutual = function try_mutual(uid, resp) {
                 url:    'http://osu.ppy.sh/u/' + uid,
                 headers: {
                     'user-agent':   'Mozilla/99.99 (compatible; MSIE 99.99; Windows XP 99.99)',
-                    'cookie':       cookie
                 },
                 form: {
                     'a':                'add',
@@ -57,7 +53,6 @@ module.exports.mutual = function try_mutual(uid, resp) {
                         url:    'http://osu.ppy.sh/u/' + uid,
                         headers: {
                             'user-agent':   'Mozilla/99.99 (compatible; MSIE 99.99; Windows XP 99.99)',
-                            'cookie':       cookie
                         },
                         form: {
                             'a':                'remove',
