@@ -77,7 +77,6 @@
 	                        message.parentNode.classList.remove('hide');
 	                        busy = false;
 	                    }, 200);
-	                    data.done(xhr.responseText);
 	                }
 	            }
 	        };
@@ -129,8 +128,6 @@
 	                c: 'rgba(0, 0, 0, ' + (0.5 * Math.random() + 0.2) + ')'
 	            };
 	        });
-
-	        console.log(this.trigList);
 
 	        window.addEventListener('resize', function () {
 	            _this.resize();
