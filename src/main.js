@@ -1,5 +1,6 @@
 'use strict';
 
+require('babel-polyfill');
 let Triangels = require('./trig.js');
 
 let inst = new Triangels({
